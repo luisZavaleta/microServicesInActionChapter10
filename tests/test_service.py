@@ -10,3 +10,4 @@ def client():
 def test_index(client):
     rv = client.get('/ping')
     assert rv.status == '200 OK'
+/* comment */
