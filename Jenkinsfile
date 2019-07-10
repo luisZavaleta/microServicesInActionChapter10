@@ -2,7 +2,7 @@ def withPod(body){
 	podTemplate(
 		label: 'pod', 
 		serviceAccount: 'jenkins', 
-		containers: [containerTemplate(name: 'docker', image: 'docker' command: 'cat', ttyEnabled: true),
+		containers: [containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
 			     containerTemplate(name: 'kubectl', image: 'morganjbruce/kubectl', command: 'cat', ttyEnabled: true)],
 		volumes: [hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),]){ body() }
 }
