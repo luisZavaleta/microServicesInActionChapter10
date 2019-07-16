@@ -30,7 +30,7 @@ withPod {
         }
       }
 
-      def tagToDeploy = "luisZavaleta/${service}"
+      def tagToDeploy = "luiszavaleta/${service}"
       stage('Publish') {
         withDockerRegistry(registry: [credentialsId:'dockerhub']){
           sh("docker tag ${service} ${tagToDeploy}")
