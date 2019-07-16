@@ -38,7 +38,7 @@ withPod {
         }
       }
 
-      def deploy = load('deploy.groovy')
+     def deploy = load('deploy.groovy')
 
       stage('Deploy to staging') {
         deploy.toKubernetes(tagToDeploy, 'staging', 'market-data')
@@ -51,5 +51,8 @@ withPod {
       stage('Deploy to production') {
         deploy.toKubernetes(tagToDeploy, 'production', 'market-data')
       }
+
+
+    }
   }
 }
